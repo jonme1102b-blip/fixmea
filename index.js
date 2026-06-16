@@ -26,13 +26,6 @@ async function loadCourse() {
     const course =
       await response.json();
 
-    alert(
-      "Course_ID: " + course.Course_ID + "\n" +
-      "Course: " + course.Course + "\n" +
-      "Structure: " + course.Structure + "\n" +
-      "Terms: " + course.Terms
-    );
-
     document.getElementById(
       "Course"
     ).textContent =
