@@ -1,19 +1,110 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-    <title>FixMea</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixMea - Secondary Science</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <h1>FixMea</h1>
+    <div class="top-bar">
+        <button id="admin-login-btn">
+            Admin Login
+        </button>
+    </div>
 
-    <p>Website coming soon.</p>
+    <main>
+
+        <h1 id="Course"></h1>
+
+        <section>
+
+            <h2>Next Session</h2>
+
+            <p>
+                <strong>Title:</strong>
+                <span id="Title"></span>
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="Date"></span>
+            </p>
+
+            <p>
+                <strong>Time:</strong>
+                <span id="Time"></span>
+            </p>
+
+            <p>
+                <strong>Content:</strong>
+                <span id="Content"></span>
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Book Now £10</h2>
+
+            <input
+                type="email"
+                id="booking-email"
+                placeholder="Email Address"
+            >
+
+            <button id="paypal-button">
+                Pay with PayPal
+            </button>
+
+        </section>
+
+        <section>
+
+            <h2>Book With Referral £0</h2>
+
+            <input
+                type="email"
+                id="referral-email"
+                placeholder="Your Email Address"
+            >
+
+            <input
+                type="email"
+                id="new-person-email"
+                placeholder="Email of New Person"
+            >
+
+        </section>
+
+        <section>
+
+            <h2>Lesson Schedule</h2>
+
+            <div id="LessonSchedule"></div>
+
+        </section>
+
+        <section>
+
+            <h2>Lesson Structure</h2>
+
+            <div id="Structure"></div>
+
+        </section>
+
+        <section>
+
+            <h2>Terms & Conditions</h2>
+
+            <div id="Terms"></div>
+
+        </section>
+
+    </main>
+
+    <script src="index.js"></script>
 
 </body>
-
 </html>
