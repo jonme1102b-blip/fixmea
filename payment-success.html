@@ -29,6 +29,11 @@
                     "token"
                 );
 
+            const bookingEmail =
+                localStorage.getItem(
+                    "booking_email"
+                );
+
             const response =
                 await fetch(
                     "https://vnpxxetojolmgtzrqeuy.supabase.co/functions/v1/paypal-success",
@@ -41,7 +46,9 @@
                         body:
                             JSON.stringify({
                                 token:
-                                    token
+                                    token,
+                                email:
+                                    bookingEmail
                             })
                     }
                 );
