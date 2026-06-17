@@ -8,6 +8,13 @@ document.addEventListener(
     await loadCourse();
     await loadNextSession();
     await loadLessonSchedule();
+
+    document.getElementById(
+      "paypal-button"
+    ).addEventListener(
+      "click",
+      payWithPayPal
+    );
   }
 );
 
@@ -140,4 +147,60 @@ async function loadLessonSchedule() {
       error
     );
   }
+}
+
+async function payWithPayPal() {
+
+  const email =
+    document.getElementById(
+      "booking-email"
+    ).value.trim();
+
+  if (
+    !email ||
+    !email.includes("@")
+  ) {
+
+    alert(
+      "Please enter a valid email address."
+    );
+
+    return;
+  }
+
+  localStorage.setItem(
+    "booking_email",
+    email
+  );
+
+  const response =
+    await fetch(
+      `${SUPABASE_URL}/create-paypal-order`,
+      {
+        method: "POST"
+      }
+    );
+
+  const data =
+    await response.json();
+
+  if (
+    !response.ok
+  ) {
+
+    alert(
+      data.error ||
+      "PayPal error."
+    );
+
+    return;
+  }
+
+  localStorage.setItem(
+    "paypal_order_id",
+    data.order_id
+  );
+
+  window.location.href =
+    data.approve_url;
 }
