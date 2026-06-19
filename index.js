@@ -22,6 +22,46 @@ document.addEventListener(
       "click",
       bookWithReferral
     );
+
+    document.getElementById(
+      "booking-email"
+    ).addEventListener(
+      "focus",
+      () => {
+
+        document.getElementById(
+          "referral-email"
+        ).value = "";
+
+        document.getElementById(
+          "new-person-email"
+        ).value = "";
+      }
+    );
+
+    document.getElementById(
+      "referral-email"
+    ).addEventListener(
+      "focus",
+      () => {
+
+        document.getElementById(
+          "booking-email"
+        ).value = "";
+      }
+    );
+
+    document.getElementById(
+      "new-person-email"
+    ).addEventListener(
+      "focus",
+      () => {
+
+        document.getElementById(
+          "booking-email"
+        ).value = "";
+      }
+    );
   }
 );
 
