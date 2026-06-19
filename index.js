@@ -156,9 +156,11 @@ async function payWithPayPal() {
       "booking-email"
     ).value.trim();
 
+  const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   if (
-    !email ||
-    !email.includes("@")
+    !emailPattern.test(email)
   ) {
 
     alert(
